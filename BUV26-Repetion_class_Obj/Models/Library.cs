@@ -38,9 +38,23 @@ namespace BUV26_Repetion_class_Obj.Models
             }
             if(antal == 0)
             {
-                Console.WriteLine("Inga böcker är tillgängliga jus nu");
+                Console.WriteLine("Inga böcker är tillgängliga just nu");
             }
         }
+
+
+        public Book? FindeaBook(string title)
+        {
+            foreach(Book b in Books)
+            {
+                if(b.Title.ToLower() == title.ToLower())
+                {
+                    return b;
+                }
+            }
+            return null;
+        }
+
 
 
         // Lägger in lite testdata 
